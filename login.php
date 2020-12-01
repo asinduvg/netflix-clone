@@ -1,9 +1,8 @@
 <?php
 
-    if(isset($_POST['submitButton'])) {
-        echo 'Form was submitted!';
-    }
-
+if (isset($_POST['submitButton'])) {
+    echo 'Form was submitted!';
+}
 
 ?>
 
@@ -24,23 +23,17 @@
 
             <div class="header">
                 <img src="assets/img/logo.png" alt="logo" title="logo">
-                <h3>Sign Up</h3>
+                <h3>Sign In</h3>
                 <span>to continue to Netflix</span>
             </div>
 
             <form action="" method="POST">
-
-                <input type="text" name="firstName" placeholder="first name" required>
-                <input type="text" name="lastName" placeholder="last name" required>
                 <input type="text" name="username" placeholder="username" required>
-                <input type="email" name="email" placeholder="email" required>
-                <input type="email" name="email2" placeholder="confirm email" required>
                 <input type="password" name="password" placeholder="password" required>
-                <input type="password" name="password2" placeholder="confirm password" required>
                 <input type="submit" name="submitButton" value="SUBMIT">
             </form>
 
-            <a href="login.php" class="signin__message">Already have an account? Sign in here</a>
+            <a href="register.php" class="signin__message">Need an account? Sign up here</a>
 
         </div>
     </div>

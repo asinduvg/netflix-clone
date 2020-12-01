@@ -1,0 +1,84 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.signin__container {
+    background-color: #efefee;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    background-color: #fff;
+    min-height: 300px;
+    max-height: 100%;
+    width: 450px;
+    box-shadow: rgba(0, 0, 0, 0, .1) 0 1px 2px;
+    padding: 20px 35px;
+}
+
+.column form {
+    display: flex;
+    flex-direction: column;
+}
+
+.column form input[type="text"],
+.column form input[type="email"],
+.column form input[type="password"] {
+    font-size: 14px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #dedede;
+}
+
+.column form input[type="submit"] {
+    background-color: #4285f4;
+    color: #fff;
+    font-size: 16px;
+    height: 36px;
+    width: 88px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.column .header {
+    padding: 20px 0;
+}
+
+.column .header h3 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0;
+    padding-top: 16px;
+    color: #000000;
+}
+
+.column .header span {
+    font-size: 14px;
+}
+
+.column .header img {
+    width: 100px;
+}
+
+.signin__message {
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+}
