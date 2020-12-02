@@ -1,6 +1,7 @@
 <?php
 
     require_once "./includes/classes/FormSanitizer.php";
+    require_once "./includes/config.php";
 
     if(isset($_POST['submitButton'])) {
         $firstName = FormSanitizer::sanitizeFormString($_POST['firstName']);
@@ -13,7 +14,6 @@
     }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
