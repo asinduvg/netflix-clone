@@ -242,3 +242,29 @@ button i {
 .preview__categories.no__scroll .category .entities {
   white-space: normal;
 }
+
+.watch__container video {
+  width: 100%;
+}
+
+.video__controlls {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.video__controlls h1 {
+  color: #fff;
+  display: inline-block;
+}
+
+.video__controlls button {
+  font-size: 50px;
+  padding: 50px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+}
+
