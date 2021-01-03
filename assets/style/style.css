@@ -1,190 +1,244 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
-    box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 h3 {
-    color: #e5e5e5;
+  color: #e5e5e5;
 }
 
 a h3:hover {
-    color: #fff;
+  color: #fff;
 }
 
 .wrapper {
-    min-width: 1050px;
-    min-height: 100%;
-    background-color: #141414;
+  min-width: 1050px;
+  min-height: 100%;
+  background-color: #141414;
 }
 
 .signin__container {
-    background-color: #efefee;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: #efefee;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .column {
-    background-color: #fff;
-    min-height: 300px;
-    max-height: 100%;
-    width: 450px;
-    box-shadow: rgba(0, 0, 0, 0, .1) 0 1px 2px;
-    padding: 20px 35px;
+  background-color: #fff;
+  min-height: 300px;
+  max-height: 100%;
+  width: 450px;
+  box-shadow: rgba(0, 0, 0, 0, 0.1) 0 1px 2px;
+  padding: 20px 35px;
 }
 
 .column form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .column form input[type="text"],
 .column form input[type="email"],
 .column form input[type="password"] {
-    font-size: 14px;
-    margin: 10px 0;
-    border: none;
-    border-bottom: 1px solid #dedede;
+  font-size: 14px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid #dedede;
 }
 
 .column form input[type="submit"] {
-    background-color: #4285f4;
-    color: #fff;
-    font-size: 16px;
-    height: 36px;
-    width: 88px;
-    border: none;
-    border-radius: 5px;
-    font-weight: 500;
-    outline: none;
-    margin-top: 10px;
-    margin-bottom: 20px;
+  background-color: #4285f4;
+  color: #fff;
+  font-size: 16px;
+  height: 36px;
+  width: 88px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  outline: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .column .header {
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
 .column .header h3 {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 32px;
-    margin: 0;
-    padding-top: 16px;
-    color: #000000;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 0;
+  padding-top: 16px;
+  color: #000000;
 }
 
 .column .header span {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .column .header img {
-    width: 100px;
+  width: 100px;
 }
 
 .signin__message {
-    font-size: 14px;
-    font-weight: 400;
-    text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
 }
 
 .errorMessage {
-    color: #f00;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
+  color: #f00;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
 }
 
 .preview__container {
-    position: relative;
-    display: flex;
+  position: relative;
+  display: flex;
 }
 
 .preview__container.small {
-    width: 230px;
-    height: 129px;
-    margin-right: 4px;
-    display: inline-flex;
+  width: 230px;
+  height: 129px;
+  margin-right: 4px;
+  display: inline-flex;
 }
 
 .preview__container.small img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .preview__img,
 .preview__video {
-    width: 100%;
+  width: 100%;
 }
 
 .preview__overlay {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .3);
-    position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
 }
 
 .preview__overlay .main__details h3 {
-    color: #fff;
-    font-size: 40px;
-    margin: 15px 0;
+  color: #fff;
+  font-size: 40px;
+  margin: 15px 0;
 }
 
 .main__details {
-    position: relative;
-    top: 35%;
-    margin-left: 50px;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  top: 35%;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .main__details button {
-    background-color: rgba(51, 51, 51, 0.4);
-    color: #fff;
-    border: none;
-    min-width: 150px;
-    padding: 0 38px;
-    height: 50px;
-    max-height: 50px;
-    font-size: 18px;
-    border-radius: 2px;
-    margin-bottom: 15px;
-    margin-right: 5px;
-    outline: none;
-    cursor: pointer;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: #fff;
+  border: none;
+  min-width: 150px;
+  padding: 0 38px;
+  height: 50px;
+  max-height: 50px;
+  font-size: 18px;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  outline: none;
+  cursor: pointer;
 }
 
 button i {
-    color: inherit;
+  color: inherit;
 }
 
 .main__details button:hover {
-    background-color: #e6e6e6;
-    color: #000000;
+  background-color: #e6e6e6;
+  color: #000000;
 }
 
 .category {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
 }
 
-.entities {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
+.entities,
+.videos {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.preview__categories {
+  padding: 0 50px;
+}
+
+.error__banner {
+  color: #fff;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.season {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 50px;
+}
+
+.episode__container {
+  display: inline-flex;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.episode__container .contents {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+}
+
+.episode__container img {
+  width: 230px;
+  height: 129px;
+  object-fit: cover;
+}
+
+.episode__container .video__info h4,
+.episode__container .video__info span {
+  color: #fff;
+  width: 100%;
+  white-space: normal;
+}
+
+.episode__container .video__info {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.preview__categories.no__scroll .category .entities {
+  white-space: normal;
 }
