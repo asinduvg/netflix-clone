@@ -144,6 +144,12 @@ a h3:hover {
   margin: 15px 0;
 }
 
+.preview__overlay .main__details h4 {
+  color: #fff;
+  font-size: 20px;
+  margin: 15px 0;
+}
+
 .main__details {
   position: relative;
   top: 35%;
@@ -219,6 +225,7 @@ button i {
   display: flex;
   flex-direction: column;
   width: 230px;
+  position: relative;
 }
 
 .episode__container img {
@@ -268,3 +275,29 @@ button i {
   border: none;
 }
 
+.up__next {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.up__next__container button {
+  padding: 0;
+}
+
+.up__next__container h2,
+.up__next__container h3 {
+  color: #fff;
+}
+
+.watch__nav {
+  z-index: 2;
+}
+
+.seen {
+  color: #2ecc71;
+  font-size: 26px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}

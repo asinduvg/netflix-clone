@@ -91,3 +91,19 @@ function setStartTime(videoId, username) {
     });
   });
 }
+
+function restartVideo() {
+  $("video")[0].currentTime = 0;
+  $("video")[0].play();
+  $(".up__next").fadeOut();
+}
+
+function watchVideo(videoId) {
+  window.location.href = "watch.php?id=" + videoId;
+}
+
+function showUpNext() {
+  $(".up__next").fadeIn();
+}
+
+
