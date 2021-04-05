@@ -11,6 +11,39 @@ class PreviewProvider
         $this->username = $username;
     }
 
+    public function createCategoryPreviewVideo($categoryId)
+    {
+        $entitiesArray = EntityProvider::getEntites($this->con, $categoryId, 1);
+        if (empty($entitiesArray)) {
+            ErrorMessage::show("No TV shows to display");
+        }
+
+        return $this->createPreviewVideo($entitiesArray[0]);
+
+    }
+
+    public function createTVShowPreviewVideo()
+    {
+        $entitiesArray = EntityProvider::getTVShowEntites($this->con, null, 1);
+        if (empty($entitiesArray)) {
+            ErrorMessage::show("No TV shows to display");
+        }
+
+        return $this->createPreviewVideo($entitiesArray[0]);
+
+    }
+    
+    public function createMoviesPreviewVideo()
+    {
+        $entitiesArray = EntityProvider::getMoviesEntites($this->con, null, 1);
+        if (empty($entitiesArray)) {
+            ErrorMessage::show("No movies to display");
+        }
+
+        return $this->createPreviewVideo($entitiesArray[0]);
+
+    }
+
     public function createPreviewVideo($entity)
     {
         if (!$entity) {

@@ -349,3 +349,7 @@ button i {
   font-size: 20px;
   margin-left: 15px;
 }
+
+.preview__categories h1 {
+  color: #e5e5e5;
+}
