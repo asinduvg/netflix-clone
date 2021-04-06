@@ -353,3 +353,18 @@ button i {
 .preview__categories h1 {
   color: #e5e5e5;
 }
+
+.textbox-container {
+  padding: 100px 50px;
+}
+
+.search__input {
+  height: 50px;
+  width: 600px;
+  border: 1px solid #dedede;
+  background-color: transparent;
+  color: #fff;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
