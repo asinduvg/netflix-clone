@@ -11,6 +11,27 @@ class Account
         $this->con = $con;
     }
 
+    public function updateDetails($fn, $ln, $em, $un)
+    {
+
+        $this->validateFirstName($fn);
+        $this->validateLastName($ln);
+        $this->validateNewEmail($em, $un);
+
+        if (empty($this->errorArray)) {
+            $query = $this->con->prepare("UPDATE users SET firstName=:fn, lastName=:ln, email=:em WHERE username=:un");
+            $query->bindValue(":fn", $fn);
+            $query->bindValue(":ln", $ln);
+            $query->bindValue(":em", $em);
+            $query->bindValue(":un", $un);
+
+            return $query->execute();
+        }
+
+        return false;
+
+    }
+
     public function register($fn, $ln, $un, $em, $em2, $pw, $pw2)
     {
         $this->validateFirstName($fn);
@@ -19,14 +40,15 @@ class Account
         $this->validateEmails($em, $em2);
         $this->validatePasswords($pw, $pw2);
 
-        if(empty($this->errorArray)) {
+        if (empty($this->errorArray)) {
             return $this->insertUserDetails($fn, $ln, $un, $em, $pw);
         }
 
         return false;
     }
 
-    public function login($un, $pw) {
+    public function login($un, $pw)
+    {
         $pw = hash("sha512", $pw);
         $query = $this->con->prepare("SELECT * FROM users WHERE username=:un AND password=:pw LIMIT 1");
         $query->bindValue(':un', $un);
@@ -34,7 +56,7 @@ class Account
 
         $query->execute();
 
-        if($query->rowCount() === 1) {
+        if ($query->rowCount() === 1) {
             return true;
         }
 
@@ -44,7 +66,8 @@ class Account
 
     }
 
-    private function insertUserDetails($fn, $ln, $un, $em, $pw) {
+    private function insertUserDetails($fn, $ln, $un, $em, $pw)
+    {
         $pw = hash("sha512", $pw);
         $query = $this->con->prepare("INSERT INTO users (firstName, lastName, username, email, password) VALUES (:fn, :ln, :un, :em, :pw)");
         $query->bindValue(':fn', $fn);
@@ -110,6 +133,25 @@ class Account
         }
     }
 
+    private function validateNewEmail($em, $un)
+    {
+
+        if (!filter_var($em, FILTER_VALIDATE_EMAIL)) {
+            array_push($this->errorArray, Constants::$invalidEmail);
+            return;
+        }
+
+        $query = $this->con->prepare("SELECT * FROM users WHERE email=:em AND username != :un");
+        $query->bindValue(":em", $em);
+        $query->bindValue(":un", $un);
+
+        $query->execute();
+
+        if ($query->rowCount() !== 0) {
+            array_push($this->errorArray, Constants::$emailTaken);
+        }
+    }
+
     private function validatePasswords($pw, $pw2)
     {
         if ($pw !== $pw2) {
@@ -127,6 +169,45 @@ class Account
     {
         if (in_array($error, $this->errorArray)) {
             return "<span class='errorMessage'>$error</span>";
+        }
+    }
+
+    public function getFirstError()
+    {
+        if (!empty($this->errorArray)) {
+            return $this->errorArray[0];
+        }
+    }
+
+    public function updatePassword($oldPw, $pw, $pw2, $un)
+    {
+        $this->validateOldPassword($oldPw, $un);
+        $this->validatePasswords($pw, $pw2);
+
+        if (empty($this->errorArray)) {
+            $query = $this->con->prepare("UPDATE users SET password=:pw WHERE username=:un");
+            $pw = hash("sha512", $pw);
+            $query->bindValue(":pw", $pw);
+            $query->bindValue(":un", $un);
+
+            return $query->execute();
+        }
+
+        return false;
+
+    }
+
+    public function validateOldPassword($oldPw, $un)
+    {
+        $pw = hash("sha512", $oldPw);
+        $query = $this->con->prepare("SELECT * FROM users WHERE username=:un AND password=:pw LIMIT 1");
+        $query->bindValue(':un', $un);
+        $query->bindValue(':pw', $pw);
+
+        $query->execute();
+
+        if ($query->rowCount() == 0) {
+            array_push($this->errorArray, Constants::$passwordIncorrect);
         }
     }
 
