@@ -13,6 +13,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #0654ba;
 }
 
 h3 {
@@ -416,6 +417,12 @@ button i {
   color: #dc1928;
 }
 
-.alert-succcess {
+.alert-success {
   color: #2ecc71;
+}
+
+.form__section h3 {
+  padding: 0;
+  color: #fff;
+  font-size: 20px;
 }
